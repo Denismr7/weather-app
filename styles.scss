@@ -1,0 +1,41 @@
+@mixin flexAndDirection($direction) {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: $direction;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @include flexAndDirection(column);
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#035aa6, #40bad5);
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+
+    .location-section {
+        @include flexAndDirection(row);
+        justify-content: space-around;
+    }
+    .temp-section {
+        @include flexAndDirection(column);
+        align-items: center;
+        .temp {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+        }
+        .degrees, .degrees-type {
+            font-size: 3rem;
+            padding: 5px;
+        }
+        .description {
+            font-size: 1.5rem;
+        }
+    }
+}
