@@ -52,4 +52,23 @@ body {
             font-size: 1.5rem;
         }
     }
+    .extra-container {
+        @include flexAndDirection(row);
+        justify-content: space-evenly;
+        color: black;
+        .item {
+            @include flexAndDirection(column);
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+            width: 150px;
+            height: 210px;
+            border-radius: 5px 5px 5px 5px;
+            box-shadow: -4px 3px 16px -3px rgba(0,0,0,0.75);
+            .extra-icons {
+                width: 40px;
+                height: auto;
+            }
+        }
+    }
 }

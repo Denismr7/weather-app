@@ -91,4 +91,49 @@ body .temp-section .degrees, body .temp-section .degrees-type {
 body .temp-section .description {
   font-size: 1.5rem;
 }
+
+body .extra-container {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: black;
+}
+
+body .extra-container .item {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: whitesmoke;
+  width: 150px;
+  height: 210px;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-box-shadow: -4px 3px 16px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: -4px 3px 16px -3px rgba(0, 0, 0, 0.75);
+}
+
+body .extra-container .item .extra-icons {
+  width: 40px;
+  height: auto;
+}
 /*# sourceMappingURL=styles.css.map */
