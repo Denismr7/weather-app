@@ -3,6 +3,12 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: whitesmoke;
+}
+
+body .main-container {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -18,11 +24,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#035aa6), to(#40bad5));
-  background: linear-gradient(#035aa6, #40bad5);
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  color: whitesmoke;
+  height: 70vh;
+}
+
+body .background, body .bg-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  pointer-events: none;
+}
+
+body .bg-effect {
+  background-color: rgba(9, 35, 112, 0.623);
 }
 
 body .location-section {
@@ -66,6 +80,7 @@ body .temp-section .temp {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  z-index: 2;
 }
 
 body .temp-section .degrees, body .temp-section .degrees-type {
