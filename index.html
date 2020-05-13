@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Direct Weather</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <img src="background.jpg" alt="" class="background">
-    <div class="bg-effect">    </div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <img src="background.jpg" alt="" class="background" />
+    <div class="bg-effect"></div>
     <div class="main-container">
-    <section class="location-section">
+      <section class="location-section">
         <h2>The weather in: <span class="location">Your Location</span></h2>
-    </section>
-    <section class="temp-section">
-        <div class="temp"><h3 class="degrees">100</h3><span class="degrees-type"> ºC</span></div>
-        <img src="" alt="weather-icon" srcset="" class="weather-icon">
+      </section>
+      <section class="temp-section">
+        <div class="temp">
+          <h3 class="degrees">100</h3>
+          <span class="degrees-type"> ºC</span>
+        </div>
+        <img src="" alt="weather-icon" srcset="" class="weather-icon" />
         <h4 class="description">Cloudy</h4>
+      </section>
+      <script src="app.js"></script>
+    </div>
+    <section class="extra-container">
+      <article class="item">
+        <img
+          src="https://image.flaticon.com/icons/svg/439/439440.svg"
+          alt="wind-speed"
+          class="extra-icons"
+        />
+        <h5 class="item-title">Wind Speed</h5>
+        <p class="wind-speed item-data">Data</p>
+      </article>
+      <article class="item">
+        <img
+          src="https://image.flaticon.com/icons/svg/728/728093.svg"
+          alt="humidity"
+          class="extra-icons"
+        />
+        <h5 class="item-title">Humidity</h5>
+        <p class="humidity item-data">Data</p>
+      </article>
+      <article class="item">
+        <img
+          src="https://i.imgur.com/pM8XuUz.png"
+          alt="humidity"
+          class="extra-icons"
+        />
+        <h5 class="item-title">UV Index</h5>
+        <p class="uv-index item-data">Data</p>
+      </article>
     </section>
-    <script src="app.js"></script>
-    </div>
-    <div class="extra-container">
-        <section class="item">
-            <img src="https://image.flaticon.com/icons/svg/439/439440.svg" alt="wind-speed" class="extra-icons">
-            <h5 class="item-title">Wind Speed</h5>
-            <p class="wind-speed item-data">Data</p>
-        </section>
-        <section class="item">
-            <img src="https://image.flaticon.com/icons/svg/728/728093.svg" alt="humidity" class="extra-icons">
-            <h5 class="item-title">Humidity</h5>
-            <p class="humidity item-data">Data</p>
-        </section>
-        <section class="item">
-            <img src="https://i.imgur.com/pM8XuUz.png" alt="humidity" class="extra-icons">
-            <h5 class="item-title">UV Index</h5>
-            <p class="uv-index item-data">Data</p>
-        </section>
-    </div>
-</body>
+    <section class="forecast">
+      <h2>Forecast for the next 7 days</h2>
+      <article class="forecast-item-container">
+        <div class="forecast-item-date">
+          <h5>
+            <span class="forecast-month" id="month1">April</span><span class="forecast-day" id="day1">20</span>
+          </h5>
+        </div>
+        <img src="#" alt="Icon" class="forecast-icon" id="forecast-icon1">
+        <div class="forecast-temps">
+            <!-- METER TEMPERATURA MAX Y MINIMA-->
+
+        </div>
+      </article>
+    </section>
+  </body>
 </html>

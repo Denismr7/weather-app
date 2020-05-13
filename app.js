@@ -35,13 +35,14 @@ if (navigator.geolocation) {
                }
            })
 
-           // Get the extra info for the cards
+           // Get the extra info for the cards and forecast
            const wind = document.querySelector(".wind-speed");
            const humidity = document.querySelector(".humidity");
            const uvindex = document.querySelector(".uv-index");
            wind.textContent = `${response.current["wind_speed"]} meter/sec`;
            humidity.textContent = `${response.current.humidity} %`;
            uvindex.textContent = `${response.current.uvi}`;
+           const dt = response.daily[1].dt * 1000
 
            // Change the color of uvindex based in its data
            if (uvindex.textContent < 2){
