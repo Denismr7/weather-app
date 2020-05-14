@@ -17,9 +17,9 @@ body .main-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -50,6 +50,7 @@ body .location-section {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin-top: 5%;
 }
 
 body .temp-section {
@@ -163,7 +164,8 @@ body .forecast {
 }
 
 body .forecast h2 {
-  color: #878787;
+  color: #464646;
+  font-weight: normal;
 }
 
 body .forecast-item-container {
@@ -219,20 +221,12 @@ body .forecast-item-container .forecast-temps .minmax-container {
 }
 
 body .forecast .forecast-cards-container {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
   margin-bottom: 5%;
 }
 /*# sourceMappingURL=styles.css.map */

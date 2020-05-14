@@ -56,7 +56,7 @@ if (navigator.geolocation) {
                uvindex.style.color = "#800080";
            }
            // Forecast for the next 7 days
-           for (let i = 1; i < 8; i++) {
+           for (let i = 1; i < 7; i++) {
                //HTML Elements
                const month = document.getElementById(`month${i}`);
                const day = document.getElementById(`day${i}`);
