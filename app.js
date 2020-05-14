@@ -5,6 +5,16 @@ const degrees = document.querySelector(".degrees");
 const description = document.querySelector(".description");
 const icon = document.querySelector(".weather-icon");
 
+// Functions
+const changeToF = (celsius) => {
+    return celsius * (9/5) +32
+}
+const metsecToMilesHour = (metsec) => {
+    const result = metsec * 2.23693629;
+    const round = (Math.round(result * 100))/100
+    return round
+}
+
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
        const { latitude, longitude } = position.coords;
@@ -28,7 +38,7 @@ if (navigator.geolocation) {
            temp.addEventListener("click", function() {
                if (document.querySelector(".degrees-type").textContent === " ºC") {
                 document.querySelector(".degrees-type").textContent = " ºF"
-                degrees.textContent = Math.floor(response.current.temp * (9/5) + 32);
+                degrees.textContent = Math.floor(changeToF(response.current.temp));
                } else {
                 document.querySelector(".degrees-type").textContent = " ºC";
                 degrees.textContent = response.current.temp;
@@ -42,6 +52,15 @@ if (navigator.geolocation) {
            wind.textContent = `${response.current["wind_speed"]} meter/sec`;
            humidity.textContent = `${response.current.humidity} %`;
            uvindex.textContent = `${response.current.uvi}`;
+
+           // Change wind speed to miles/hour if clicked (and vice versa)
+           wind.addEventListener("click", function() {
+               if (wind.textContent.includes("meter")) {
+                   wind.textContent = `${metsecToMilesHour(response.current["wind_speed"])} miles/hour`
+               } else {
+                wind.textContent = `${response.current["wind_speed"]} meter/sec`;
+               }
+           })
 
            // Change the color of uvindex based in its data
            if (uvindex.textContent < 2){
@@ -73,6 +92,22 @@ if (navigator.geolocation) {
                day.textContent = `${datetime.getDate()}`;
                min.textContent = `${response.daily[i].temp.min} ºC`;
                max.textContent = `${response.daily[i].temp.max} ºC`;
+
+               // Event listeners to change between Celsius - Fahrenheit
+               min.addEventListener("click", function() {
+                   if (min.textContent.includes("C")) {
+                   min.textContent = `${changeToF(Math.floor(response.daily[i].temp.min))} ºF`
+                   } else {
+                       min.textContent = `${response.daily[i].temp.min} ºC`;
+                   }
+               })
+               max.addEventListener("click", function() {
+                   if (max.textContent.includes("C")) {
+                   max.textContent = `${changeToF(Math.floor(response.daily[i].temp.max))} ºF`
+                   } else {
+                       max.textContent = `${response.daily[i].temp.max} ºC`;
+                   }
+               })
 
                
            }

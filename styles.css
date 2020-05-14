@@ -138,6 +138,10 @@ body .extra-container .item .extra-icons {
   height: auto;
 }
 
+body .extra-container .item .wind-speed {
+  cursor: pointer;
+}
+
 body .extra-container .item .item-data {
   font-weight: bold;
 }
@@ -218,6 +222,10 @@ body .forecast-item-container .forecast-temps .minmax-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+body .forecast-item-container .forecast-temps .minmax-container .min, body .forecast-item-container .forecast-temps .minmax-container .max {
+  cursor: pointer;
 }
 
 body .forecast .forecast-cards-container {
