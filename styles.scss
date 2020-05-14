@@ -86,13 +86,36 @@ body {
             color: #878787;
         }
         &-item-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             width: 210px;
             height: 270px;
-            padding: 25px;
+            padding: 0px 15px 30px 15px;
             margin: 25px;
             background-color: rgb(49, 137, 252);
             border-radius: 5px 5px 5px 5px;
             box-shadow: -4px 3px 16px -3px rgba(0,0,0,0.30);
+            .forecast-item-date {
+                font-size: 2rem;
+            }
+            .forecast-temps {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                .minmax-container {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        .forecast-cards-container {
+            @include flexAndDirection(row);
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            margin-bottom: 5%;
         }
     }
 }

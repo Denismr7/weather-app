@@ -42,7 +42,6 @@ if (navigator.geolocation) {
            wind.textContent = `${response.current["wind_speed"]} meter/sec`;
            humidity.textContent = `${response.current.humidity} %`;
            uvindex.textContent = `${response.current.uvi}`;
-           const dt = response.daily[1].dt * 1000
 
            // Change the color of uvindex based in its data
            if (uvindex.textContent < 2){
@@ -55,6 +54,27 @@ if (navigator.geolocation) {
                uvindex.style.color = "red";
            } else {
                uvindex.style.color = "#800080";
+           }
+           // Forecast for the next 7 days
+           for (let i = 1; i < 8; i++) {
+               //HTML Elements
+               const month = document.getElementById(`month${i}`);
+               const day = document.getElementById(`day${i}`);
+               const iconForecast = document.getElementById(`forecast-icon${i}`);
+               const min = document.getElementById(`min${i}`);
+               const max = document.getElementById(`max${i}`);
+               
+               const datetime = new Date(response.daily[i].dt * 1000);
+               const iconCodeForecast = response.daily[i].weather[0].icon;
+               const iconUrlForecast = `http://openweathermap.org/img/wn/${iconCodeForecast}@2x.png`;
+               iconForecast.src = iconUrlForecast;
+               const monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+               month.textContent = `${monthArr[datetime.getMonth()]} `;
+               day.textContent = `${datetime.getDate()}`;
+               min.textContent = `${response.daily[i].temp.min} ºC`;
+               max.textContent = `${response.daily[i].temp.max} ºC`;
+
+               
            }
     });
     fetch(url).then(data => data.json()).then(data => {
