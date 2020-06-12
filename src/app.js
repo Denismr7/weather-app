@@ -2,7 +2,7 @@ const loc = document.querySelector(".location");
 const degrees = document.querySelector(".degrees");
 const description = document.querySelector(".description");
 const icon = document.querySelector(".weather-icon");
-const apikey = process.env.API
+const apikey = process.env.NODE_ENV_API
 
 // Functions
 const changeToF = (celsius) => {
