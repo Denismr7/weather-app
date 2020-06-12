@@ -1,9 +1,8 @@
-import { apikey } from './apikey';
-
 const loc = document.querySelector(".location");
 const degrees = document.querySelector(".degrees");
 const description = document.querySelector(".description");
 const icon = document.querySelector(".weather-icon");
+const apikey = process.env.API_KEY
 
 // Functions
 const changeToF = (celsius) => {
@@ -49,7 +48,7 @@ if (navigator.geolocation) {
            const wind = document.querySelector(".wind-speed");
            const humidity = document.querySelector(".humidity");
            const uvindex = document.querySelector(".uv-index");
-           wind.textContent = `${response.current["wind_speed"]} meter/sec`;
+           wind.textContent = `${response.current["wind_speed"]} m/s`;
            humidity.textContent = `${response.current.humidity} %`;
            uvindex.textContent = `${response.current.uvi}`;
 
@@ -58,7 +57,7 @@ if (navigator.geolocation) {
                if (wind.textContent.includes("meter")) {
                    wind.textContent = `${metsecToMilesHour(response.current["wind_speed"])} miles/hour`
                } else {
-                wind.textContent = `${response.current["wind_speed"]} meter/sec`;
+                wind.textContent = `${response.current["wind_speed"]} m/s`;
                }
            })
 
