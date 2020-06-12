@@ -29,7 +29,7 @@ if (navigator.geolocation) {
            description.textContent = mapDescription(response.current.weather[0]["description"]);
            // Change icon
            const iconCode = response.current.weather[0]["icon"];
-           const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+           const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
            icon.src = iconUrl;
 
            // Change temp to ºF if clicked
@@ -84,7 +84,7 @@ if (navigator.geolocation) {
                
                const datetime = new Date(response.daily[i].dt * 1000);
                const iconCodeForecast = response.daily[i].weather[0].icon;
-               const iconUrlForecast = `http://openweathermap.org/img/wn/${iconCodeForecast}@2x.png`;
+               const iconUrlForecast = `https://openweathermap.org/img/wn/${iconCodeForecast}@2x.png`;
                iconForecast.src = iconUrlForecast;
                const monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                month.textContent = `${monthArr[datetime.getMonth()]} `;
